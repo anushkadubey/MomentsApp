@@ -24,15 +24,16 @@ export const Auth = ()=>{
     const handleSubmit = (e) =>{
         e.preventDefault();
         if(isSignup){
-            dispatch(signup({formData, navigate}));
+            console.log(formData);
+            dispatch(signup({formData}));
         }
         else{
-            dispatch(signin({formData, navigate}));
+            dispatch(signin({formData}));
         }
     };
     
     const handleChange = (e) =>{
-        setFormData({...formData, [e.target.name]:e.target.value});
+        setFormData({...formData, [e.target.name]: e.target.value});
     }
 
     const switchMode = () =>{
